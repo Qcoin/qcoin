@@ -1,10 +1,10 @@
 TEMPLATE = app
 TARGET = qcoin-qt
 macx:TARGET = "Qcoin-Qt"
-VERSION = 0.8.7.2
+VERSION = 1
 INCLUDEPATH += src src/json src/qt
 QT += core gui network
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 1): QT += widgets
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
 CONFIG += thread
