@@ -19,8 +19,8 @@ PUBKEY_ADDRESS = 58
 SCRIPT_ADDRESS = 9
 PUBKEY_ADDRESS_TEST = 118
 SCRIPT_ADDRESS_TEST = 198
-PRIVKEY = 176
-PRIVKEY_TEST = 239
+PRIVKEY = 186
+PRIVKEY_TEST = 246
 
 metadata_keys = ['isPrivkey', 'isTestnet', 'addrType', 'isCompressed']
 # templates for valid sequences
