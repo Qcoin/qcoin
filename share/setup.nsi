@@ -7,7 +7,7 @@ SetCompressor /SOLID lzma
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 1.0.0.1
 !define COMPANY "Qcoin project"
-!define URL http://www.qcoin.org/
+!define URL http://www.qcoin.co/
 
 # MUI Symbol Definitions
 !define MUI_ICON "../share/pixmaps/bitcoin.ico"
