@@ -1,9 +1,0 @@
-Building Qcoin
-
-See doc/readme-qt.rst for instructions on building Qcoin-Qt,
-the intended-for-end-users, nice-graphical-interface, reference
-implementation of Qcoin.
-
-See doc/build-*.txt for instructions on building qcoind,
-the intended-for-services, no-graphical-interface, reference
-implementation of Qcoin.
