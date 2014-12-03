@@ -1090,7 +1090,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     int64 nSubsidy = 99790000 * COIN; //Premine
 
         if(nHeight >= 101)
-            nSubsidy = 4 * COIN;
+            nSubsidy = 10 * COIN;
 
     return nSubsidy + nFees;
 }
@@ -2807,6 +2807,7 @@ bool InitBlockIndex() {
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
         assert(block.hashMerkleRoot == uint256("0x1c0a3b1639e6b5e2e57123c4891a9393e663cf40647270e38ad3251d65b34d85"));
+
         block.print();
         assert(hash == hashGenesisBlock);
 
