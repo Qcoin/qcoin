@@ -16,7 +16,7 @@ Qcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
  - ~10 billion total coins
 
 The rest is the same as Bitcoin.
- - 4 coins per block
+ - 10 coins per block
  - 2016 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
