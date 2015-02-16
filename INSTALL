@@ -1,9 +1,9 @@
-Building BlackCoin
+Building QCoin
 
-See doc/readme-qt.rst for instructions on building BlackCoin QT,
+See doc/readme-qt.rst for instructions on building QCoin QT,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of BlackCoin.
+implementation of QCoin.
 
-See doc/build-*.txt for instructions on building blackcoind,
+See doc/build-*.txt for instructions on building qcoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of BlackCoin.
+implementation of QCoin.

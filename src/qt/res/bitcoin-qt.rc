@@ -18,14 +18,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "BlackCoin"
-            VALUE "FileDescription",    "BlackCoin-Qt (OSS GUI client for BlackCoin)"
+            VALUE "CompanyName",        "QCoin"
+            VALUE "FileDescription",    "QCoin-Qt (OSS GUI client for QCoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "blackcoin-qt"
+            VALUE "InternalName",       "qcoin-qt"
             VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2012-2013 The NovaCoin & PPCoin developers"
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "blackcoin-qt.exe"
-            VALUE "ProductName",        "BlackCoin-Qt"
+            VALUE "OriginalFilename",   "qcoin-qt.exe"
+            VALUE "ProductName",        "QCoin-Qt"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

@@ -5,13 +5,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About BlackCoin</source>
-        <translation>About BlackCoin</translation>
+        <source>About QCoin</source>
+        <translation>About QCoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;BlackCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;BlackCoin&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;QCoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;QCoin&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+41"/>
@@ -65,8 +65,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your BlackCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>These are your BlackCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</translation>
+        <source>These are your QCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>These are your QCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -80,8 +80,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a BlackCoin address</source>
-        <translation>Sign a message to prove you own a BlackCoin address</translation>
+        <source>Sign a message to prove you own a QCoin address</source>
+        <translation>Sign a message to prove you own a QCoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -95,8 +95,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified BlackCoin address</source>
-        <translation>Verify a message to ensure it was signed with a specified BlackCoin address</translation>
+        <source>Verify a message to ensure it was signed with a specified QCoin address</source>
+        <translation>Verify a message to ensure it was signed with a specified QCoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -253,8 +253,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>BlackCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>BlackCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</translation>
+        <source>QCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>QCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -367,8 +367,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about BlackCoin</source>
-        <translation>Show information about BlackCoin</translation>
+        <source>Show information about QCoin</source>
+        <translation>Show information about QCoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -420,13 +420,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-58"/>
-        <source>Send coins to a BlackCoin address</source>
-        <translation>Send coins to a BlackCoin address</translation>
+        <source>Send coins to a QCoin address</source>
+        <translation>Send coins to a QCoin address</translation>
     </message>
     <message>
         <location line="+45"/>
-        <source>Modify configuration options for BlackCoin</source>
-        <translation>Modify configuration options for BlackCoin</translation>
+        <source>Modify configuration options for QCoin</source>
+        <translation>Modify configuration options for QCoin</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -465,8 +465,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-186"/>
-        <source>BlackCoin</source>
-        <translation>BlackCoin</translation>
+        <source>QCoin</source>
+        <translation>QCoin</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -475,8 +475,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+168"/>
-        <source>&amp;About BlackCoin</source>
-        <translation>&amp;About BlackCoin</translation>
+        <source>&amp;About QCoin</source>
+        <translation>&amp;About QCoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -517,15 +517,15 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>BlackCoin client</source>
-        <translation>BlackCoin client</translation>
+        <source>QCoin client</source>
+        <translation>QCoin client</translation>
     </message>
     <message numerus="yes">
         <location line="+69"/>
-        <source>%n active connection(s) to BlackCoin network</source>
+        <source>%n active connection(s) to QCoin network</source>
         <translation>
-            <numerusform>%n active connection to BlackCoin network</numerusform>
-            <numerusform>%n active connections to BlackCoin network</numerusform>
+            <numerusform>%n active connection to QCoin network</numerusform>
+            <numerusform>%n active connections to QCoin network</numerusform>
         </translation>
     </message>
     <message>
@@ -622,8 +622,8 @@ Address: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid BlackCoin address or malformed URI parameters.</source>
-        <translation>URI can not be parsed! This can be caused by an invalid BlackCoin address or malformed URI parameters.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid QCoin address or malformed URI parameters.</source>
+        <translation>URI can not be parsed! This can be caused by an invalid QCoin address or malformed URI parameters.</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -657,8 +657,8 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. BlackCoin can no longer continue safely and will quit.</source>
-        <translation>A fatal error occurred. BlackCoin can no longer continue safely and will quit.</translation>
+        <source>A fatal error occurred. QCoin can no longer continue safely and will quit.</source>
+        <translation>A fatal error occurred. QCoin can no longer continue safely and will quit.</translation>
     </message>
 </context>
 <context>
@@ -702,8 +702,8 @@ Address: %4
         <location line="+80"/>
         <location line="+86"/>
         <location line="+38"/>
-        <source>0.00 BC</source>
-        <translation type="unfinished">123.456 BC {0.00 ?}</translation>
+        <source>0.00 QTC</source>
+        <translation type="unfinished">123.456 QTC {0.00 ?}</translation>
     </message>
     <message>
         <location line="-191"/>
@@ -992,8 +992,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+5"/>
-        <source>The entered address &quot;%1&quot; is not a valid BlackCoin address.</source>
-        <translation>The entered address &quot;%1&quot; is not a valid BlackCoin address.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid QCoin address.</source>
+        <translation>The entered address &quot;%1&quot; is not a valid QCoin address.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1011,8 +1011,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>BlackCoin-Qt</source>
-        <translation>BlackCoin-Qt</translation>
+        <source>QCoin-Qt</source>
+        <translation>QCoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1074,13 +1074,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start BlackCoin after logging in to the system.</source>
-        <translation>Automatically start BlackCoin after logging in to the system.</translation>
+        <source>Automatically start QCoin after logging in to the system.</source>
+        <translation>Automatically start QCoin after logging in to the system.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start BlackCoin on system login</source>
-        <translation>&amp;Start BlackCoin on system login</translation>
+        <source>&amp;Start QCoin on system login</source>
+        <translation>&amp;Start QCoin on system login</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1099,8 +1099,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the BlackCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the BlackCoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the QCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the QCoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1109,8 +1109,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the BlackCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Connect to the BlackCoin network through a SOCKS proxy (e.g. when connecting through Tor).</translation>
+        <source>Connect to the QCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Connect to the QCoin network through a SOCKS proxy (e.g. when connecting through Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1184,8 +1184,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting BlackCoin.</source>
-        <translation>The user interface language can be set here. This setting will take effect after restarting BlackCoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting QCoin.</source>
+        <translation>The user interface language can be set here. This setting will take effect after restarting QCoin.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1199,8 +1199,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show BlackCoin addresses in the transaction list or not.</source>
-        <translation>Whether to show BlackCoin addresses in the transaction list or not.</translation>
+        <source>Whether to show QCoin addresses in the transaction list or not.</source>
+        <translation>Whether to show QCoin addresses in the transaction list or not.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1246,8 +1246,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting BlackCoin.</source>
-        <translation>This setting will take effect after restarting BlackCoin.</translation>
+        <source>This setting will take effect after restarting QCoin.</source>
+        <translation>This setting will take effect after restarting QCoin.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1265,8 +1265,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+33"/>
         <location line="+212"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BlackCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the BlackCoin network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the QCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the QCoin network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-170"/>
@@ -1481,8 +1481,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the BlackCoin-Qt help message to get a list with possible BlackCoin command-line options.</source>
-        <translation>Show the BlackCoin-Qt help message to get a list with possible BlackCoin command-line options.</translation>
+        <source>Show the QCoin-Qt help message to get a list with possible QCoin command-line options.</source>
+        <translation>Show the QCoin-Qt help message to get a list with possible QCoin command-line options.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1501,13 +1501,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="-104"/>
-        <source>BlackCoin - Debug window</source>
-        <translation>BlackCoin - Debug window</translation>
+        <source>QCoin - Debug window</source>
+        <translation>QCoin - Debug window</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>BlackCoin Core</source>
-        <translation>BlackCoin Core</translation>
+        <source>QCoin Core</source>
+        <translation>QCoin Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1516,8 +1516,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the BlackCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Open the BlackCoin debug log file from the current data directory. This can take a few seconds for large log files.</translation>
+        <source>Open the QCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open the QCoin debug log file from the current data directory. This can take a few seconds for large log files.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1526,8 +1526,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the BlackCoin RPC console.</source>
-        <translation>Welcome to the BlackCoin RPC console.</translation>
+        <source>Welcome to the QCoin RPC console.</source>
+        <translation>Welcome to the QCoin RPC console.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1600,8 +1600,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location line="+86"/>
         <location line="+86"/>
         <location line="+32"/>
-        <source>0.00 BC</source>
-        <translation type="unfinished">123.456 BC {0.00 ?}</translation>
+        <source>0.00 QTC</source>
+        <translation type="unfinished">123.456 QTC {0.00 ?}</translation>
     </message>
     <message>
         <location line="-191"/>
@@ -1670,8 +1670,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+10"/>
-        <source>123.456 BC</source>
-        <translation>123.456 BC</translation>
+        <source>123.456 QTC</source>
+        <translation>123.456 QTC</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -1685,8 +1685,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation type="unfinished">Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a QCoin address (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation type="unfinished">Enter a QCoin address (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1785,7 +1785,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+251"/>
-        <source>WARNING: Invalid BlackCoin address</source>
+        <source>WARNING: Invalid QCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1829,7 +1829,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to send the payment to  (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <source>The address to send the payment to  (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1859,8 +1859,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a QCoin address (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Enter a QCoin address (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -1883,8 +1883,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>The address to sign the message with (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>The address to sign the message with (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>The address to sign the message with (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1920,8 +1920,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this BlackCoin address</source>
-        <translation>Sign the message to prove you own this BlackCoin address</translation>
+        <source>Sign the message to prove you own this QCoin address</source>
+        <translation>Sign the message to prove you own this QCoin address</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1947,13 +1947,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>The address the message was signed with (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>The address the message was signed with (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>The address the message was signed with (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified BlackCoin address</source>
-        <translation>Verify the message to ensure it was signed with the specified BlackCoin address</translation>
+        <source>Verify the message to ensure it was signed with the specified QCoin address</source>
+        <translation>Verify the message to ensure it was signed with the specified QCoin address</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -1963,8 +1963,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Enter a BlackCoin address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a QCoin address (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Enter a QCoin address (e.g. Q8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1973,8 +1973,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter BlackCoin signature</source>
-        <translation>Enter BlackCoin signature</translation>
+        <source>Enter QCoin signature</source>
+        <translation>Enter QCoin signature</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2548,8 +2548,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+30"/>
-        <source>BlackCoin version</source>
-        <translation>BlackCoin version</translation>
+        <source>QCoin version</source>
+        <translation>QCoin version</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2558,8 +2558,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or blackcoind</source>
-        <translation type="unfinished">Send command to -server or blackcoind</translation>
+        <source>Send command to -server or qcoind</source>
+        <translation type="unfinished">Send command to -server or qcoind</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2578,13 +2578,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: blackcoin.conf)</source>
-        <translation>Specify configuration file (default: blackcoin.conf)</translation>
+        <source>Specify configuration file (default: qcoin.conf)</source>
+        <translation>Specify configuration file (default: qcoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: blackcoind.pid)</source>
-        <translation>Specify pid file (default: blackcoind.pid)</translation>
+        <source>Specify pid file (default: qcoind.pid)</source>
+        <translation>Specify pid file (default: qcoind.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2741,8 +2741,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+62"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong BlackCoin will not work properly.</source>
-        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong BlackCoin will not work properly.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong QCoin will not work properly.</source>
+        <translation>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong QCoin will not work properly.</translation>
     </message>
     <message>
         <location line="-32"/>
@@ -3036,13 +3036,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  BlackCoin is probably already running.</source>
-        <translation>Cannot obtain a lock on data directory %s.  BlackCoin is probably already running.</translation>
+        <source>Cannot obtain a lock on data directory %s.  QCoin is probably already running.</source>
+        <translation>Cannot obtain a lock on data directory %s.  QCoin is probably already running.</translation>
     </message>
     <message>
         <location line="-91"/>
-        <source>BlackCoin</source>
-        <translation>BlackCoin</translation>
+        <source>QCoin</source>
+        <translation>QCoin</translation>
     </message>
     <message>
         <location line="+133"/>
@@ -3076,13 +3076,13 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of BlackCoin</source>
-        <translation>Error loading wallet.dat: Wallet requires newer version of BlackCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of QCoin</source>
+        <translation>Error loading wallet.dat: Wallet requires newer version of QCoin</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart BlackCoin to complete</source>
-        <translation>Wallet needed to be rewritten: restart BlackCoin to complete</translation>
+        <source>Wallet needed to be rewritten: restart QCoin to complete</source>
+        <translation>Wallet needed to be rewritten: restart QCoin to complete</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3151,8 +3151,8 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+115"/>
-        <source>Unable to bind to %s on this computer. BlackCoin is probably already running.</source>
-        <translation>Unable to bind to %s on this computer. BlackCoin is probably already running.</translation>
+        <source>Unable to bind to %s on this computer. QCoin is probably already running.</source>
+        <translation>Unable to bind to %s on this computer. QCoin is probably already running.</translation>
     </message>
     <message>
         <location line="-109"/>
