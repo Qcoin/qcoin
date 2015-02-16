@@ -254,9 +254,9 @@ public:
 };
 
 /** base58-encoded addresses.
- * Public-key-hash-addresses have version 25 (or 111 testnet).
+ * Public-key-hash-addresses have version 58 (or 118 testnet).
  * The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
- * Script-hash-addresses have version 85 (or 196 testnet).
+ * Script-hash-addresses have version 9 (or 198 testnet).
  * The data vector contains RIPEMD160(SHA256(cscript)), where cscript is the serialized redemption script.
  */
 class CBitcoinAddress;
@@ -276,10 +276,10 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 25,
-        SCRIPT_ADDRESS = 85,
-        PUBKEY_ADDRESS_TEST = 111,
-        SCRIPT_ADDRESS_TEST = 196,
+        PUBKEY_ADDRESS = 58,
+        SCRIPT_ADDRESS = 9,
+        PUBKEY_ADDRESS_TEST = 118,
+        SCRIPT_ADDRESS_TEST = 198,
     };
 
     bool Set(const CKeyID &id) {
