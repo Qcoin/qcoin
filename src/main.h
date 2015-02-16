@@ -38,6 +38,8 @@ static const int64 MIN_RELAY_TX_FEE = MIN_TX_FEE;
 static const int64 MAX_MONEY = 2000000000 * COIN;
 static const int64 COIN_YEAR_REWARD = 1 * CENT; // 1% per year
 
+static const int MODIFIER_INTERVAL_SWITCH = 5000;
+
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
@@ -683,12 +685,11 @@ public:
         @param[in] pindexBlock
         @param[in] fBlock	true if called from ConnectBlock
         @param[in] fMiner	true if called from CreateNewBlock
-        @param[in] fStrictPayToScriptHash	true if fully validating p2sh transactions
         @return Returns true if all checks succeed
      */
     bool ConnectInputs(CTxDB& txdb, MapPrevTx inputs,
                        std::map<uint256, CTxIndex>& mapTestPool, const CDiskTxPos& posThisTx,
-                       const CBlockIndex* pindexBlock, bool fBlock, bool fMiner, bool fStrictPayToScriptHash=true);
+                       const CBlockIndex* pindexBlock, bool fBlock, bool fMiner);
     bool ClientConnectInputs();
     bool CheckTransaction() const;
     bool AcceptToMemoryPool(CTxDB& txdb, bool fCheckInputs=true, bool* pfMissingInputs=NULL);

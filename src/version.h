@@ -24,7 +24,7 @@ extern const std::string CLIENT_DATE;
 //
 // database format versioning
 //
-static const int DATABASE_VERSION = 70507;
+static const int DATABASE_VERSION = 70508;
 
 //
 // network protocol versioning
@@ -48,10 +48,5 @@ static const int BIP0031_VERSION = 60000;
 
 // "mempool" command, enhanced "getdata" behavior starts with this version:
 static const int MEMPOOL_GD_VERSION = 60002;
-
-#define DISPLAY_VERSION_MAJOR       1
-#define DISPLAY_VERSION_MINOR       0
-#define DISPLAY_VERSION_REVISION    0
-#define DISPLAY_VERSION_BUILD       0
 
 #endif
