@@ -1,7 +1,3 @@
-// Copyright (c) 2011-2013 The Bitcoin developers
-// Distributed under the MIT/X11 software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 #ifndef OPTIONSMODEL_H
 #define OPTIONSMODEL_H
 
@@ -32,14 +28,13 @@ public:
         Fee,               // qint64
         DisplayUnit,       // BitcoinUnits::Unit
         DisplayAddresses,  // bool
+        DetachDatabases,   // bool
         Language,          // QString
         CoinControlFeatures, // bool
-        SpendZeroConfChange,    // bool
         OptionIDRowCount,
     };
 
     void Init();
-    void Reset();
 
     /* Migrate settings from wallet.dat after app initialization */
     bool Upgrade(); /* returns true if settings upgraded */
@@ -50,20 +45,20 @@ public:
 
     /* Explicit getters */
     qint64 getTransactionFee();
-    bool getMinimizeToTray() { return fMinimizeToTray; }
-    bool getMinimizeOnClose() { return fMinimizeOnClose; }
-    int getDisplayUnit() { return nDisplayUnit; }
-    bool getDisplayAddresses() { return bDisplayAddresses; }
-    QString getLanguage() { return language; }
+    bool getMinimizeToTray();
+    bool getMinimizeOnClose();
+    int getDisplayUnit();
+    bool getDisplayAddresses();
     bool getCoinControlFeatures();
+    QString getLanguage() { return language; }
 
 private:
     int nDisplayUnit;
     bool bDisplayAddresses;
     bool fMinimizeToTray;
     bool fMinimizeOnClose;
-    QString language;
     bool fCoinControlFeatures;
+    QString language;
 
 signals:
     void displayUnitChanged(int unit);

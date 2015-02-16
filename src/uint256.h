@@ -8,7 +8,6 @@
 #include <limits.h>
 #include <stdio.h>
 #include <string.h>
-#include <inttypes.h>
 #include <string>
 #include <vector>
 
@@ -21,14 +20,14 @@ inline int Testuint256AdHoc(std::vector<std::string> vArg);
 
 
 /** Base class without constructors for uint256 and uint160.
- * This makes the compiler let you use it in a union.
+ * This makes the compiler let u use it in a union.
  */
 template<unsigned int BITS>
 class base_uint
 {
 protected:
     enum { WIDTH=BITS/32 };
-    uint32_t pn[WIDTH];
+    unsigned int pn[WIDTH];
 public:
 
     bool operator!() const
@@ -355,17 +354,7 @@ public:
         return (unsigned char*)&pn[WIDTH];
     }
 
-    const unsigned char* begin() const
-    {
-        return (unsigned char*)&pn[0];
-    }
-
-    const unsigned char* end() const
-    {
-        return (unsigned char*)&pn[WIDTH];
-    }
-
-    unsigned int size() const
+    unsigned int size()
     {
         return sizeof(pn);
     }
@@ -375,26 +364,22 @@ public:
         return pn[2*n] | (uint64)pn[2*n+1] << 32;
     }
 
-//    unsigned int GetSerializeSize(int nType=0, int nVersion=PROTOCOL_VERSION) const
     unsigned int GetSerializeSize(int nType, int nVersion) const
     {
         return sizeof(pn);
     }
 
     template<typename Stream>
-//    void Serialize(Stream& s, int nType=0, int nVersion=PROTOCOL_VERSION) const
     void Serialize(Stream& s, int nType, int nVersion) const
     {
         s.write((char*)pn, sizeof(pn));
     }
 
     template<typename Stream>
-//    void Unserialize(Stream& s, int nType=0, int nVersion=PROTOCOL_VERSION)
     void Unserialize(Stream& s, int nType, int nVersion)
     {
         s.read((char*)pn, sizeof(pn));
     }
-
 
     friend class uint160;
     friend class uint256;
@@ -403,8 +388,6 @@ public:
 
 typedef base_uint<160> base_uint160;
 typedef base_uint<256> base_uint256;
-
-
 
 //
 // uint160 and uint256 could be implemented as templates, but to keep
