@@ -11,6 +11,9 @@
 #include "main.h"
 #include "uint256.h"
 
+
+static const int nCheckpointSpan = 10;
+
 namespace Checkpoints
 {
     typedef std::map<int, uint256> MapCheckpoints;
@@ -25,6 +28,7 @@ namespace Checkpoints
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
         ( 0,      hashGenesisBlock )
+        ( 999,    uint256("0x0000096d5ece733c61eaa1b7c4ee0157d823727446cf292ea44b752b4ab22466") )
     ;
 
     // TestNet has no checkpoints
@@ -189,7 +193,7 @@ namespace Checkpoints
     {
         const CBlockIndex *pindex = pindexBest;
         // Search backward for a block within max span and maturity window
-        while (pindex->pprev && (pindex->GetBlockTime() + CHECKPOINT_MAX_SPAN > pindexBest->GetBlockTime() || pindex->nHeight + 8 > pindexBest->nHeight))
+        while (pindex->pprev && (pindex->GetBlockTime() + nCheckpointSpan * nTargetSpacing > pindexBest->GetBlockTime() || pindex->nHeight + nCheckpointSpan > pindexBest->nHeight))
             pindex = pindex->pprev;
         return pindex->GetBlockHash();
     }
@@ -347,7 +351,7 @@ namespace Checkpoints
 }
 
 // ppcoin: sync-checkpoint master key
-const std::string CSyncCheckpoint::strMasterPubKey = "04dafc0627ae2b9a6161adc3b82d25165a442555bcc3a002ae782a654b67980dcc6391a92bacb940e80c836e85e2c769aeb86eb9ff9d04624482422de25c070226";
+const std::string CSyncCheckpoint::strMasterPubKey = "04c3cbb0489a9f010c5de52e54c31198c54ac7de08d8fbd8cb587aceded66016005558594628f380c20386078d5d0760230c588f7f532a2a5b6f60d8c9822af104";
 
 std::string CSyncCheckpoint::strMasterPrivKey = "";
 

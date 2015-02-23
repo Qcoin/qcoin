@@ -49,7 +49,7 @@ double GetPoWMHashPS()
         return 0;
 
     int nPoWInterval = 72;
-    int64 nTargetSpacingWorkMin = 30, nTargetSpacingWork = 30;
+    int64_t nTargetSpacingWorkMin = 30, nTargetSpacingWork = 30;
 
     CBlockIndex* pindex = pindexGenesisBlock;
     CBlockIndex* pindexPrevWork = pindexGenesisBlock;
@@ -58,7 +58,7 @@ double GetPoWMHashPS()
     {
         if (pindex->IsProofOfWork())
         {
-            int64 nActualSpacingWork = pindex->GetBlockTime() - pindexPrevWork->GetBlockTime();
+            int64_t nActualSpacingWork = pindex->GetBlockTime() - pindexPrevWork->GetBlockTime();
             nTargetSpacingWork = ((nPoWInterval - 1) * nTargetSpacingWork + nActualSpacingWork + nActualSpacingWork) / (nPoWInterval + 1);
             nTargetSpacingWork = max(nTargetSpacingWork, nTargetSpacingWorkMin);
             pindexPrevWork = pindex;
@@ -107,8 +107,8 @@ Object blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool fPri
     result.push_back(Pair("version", block.nVersion));
     result.push_back(Pair("merkleroot", block.hashMerkleRoot.GetHex()));
     result.push_back(Pair("mint", ValueFromAmount(blockindex->nMint)));
-    result.push_back(Pair("time", (boost::int64_t)block.GetBlockTime()));
-    result.push_back(Pair("nonce", (boost::uint64_t)block.nNonce));
+    result.push_back(Pair("time", (int64_t)block.GetBlockTime()));
+    result.push_back(Pair("nonce", (uint64_t)block.nNonce));
     result.push_back(Pair("bits", HexBits(block.nBits)));
     result.push_back(Pair("difficulty", GetDifficulty(blockindex)));
     result.push_back(Pair("blocktrust", leftTrim(blockindex->GetBlockTrust().GetHex(), '0')));
@@ -119,9 +119,9 @@ Object blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool fPri
         result.push_back(Pair("nextblockhash", blockindex->pnext->GetBlockHash().GetHex()));
 
     result.push_back(Pair("flags", strprintf("%s%s", blockindex->IsProofOfStake()? "proof-of-stake" : "proof-of-work", blockindex->GeneratedStakeModifier()? " stake-modifier": "")));
-    result.push_back(Pair("proofhash", blockindex->IsProofOfStake()? blockindex->hashProofOfStake.GetHex() : blockindex->GetBlockHash().GetHex()));
+    result.push_back(Pair("proofhash", blockindex->hashProof.GetHex()));
     result.push_back(Pair("entropybit", (int)blockindex->GetStakeEntropyBit()));
-    result.push_back(Pair("modifier", strprintf("%016"PRI64x, blockindex->nStakeModifier)));
+    result.push_back(Pair("modifier", strprintf("%016"PRIx64, blockindex->nStakeModifier)));
     result.push_back(Pair("modifierchecksum", strprintf("%08x", blockindex->nStakeModifierChecksum)));
     Array txinfo;
     BOOST_FOREACH (const CTransaction& tx, block.vtx)
@@ -253,7 +253,7 @@ Value getblockbynumber(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "getblock <number> [txinfo]\n"
+            "getblockbynumber <number> [txinfo]\n"
             "txinfo optional to print more detailed tx info\n"
             "Returns details of a block with given block-number.");
 

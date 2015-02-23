@@ -60,8 +60,7 @@
 #include <iostream>
 
 extern CWallet* pwalletMain;
-extern int64 nLastCoinStakeSearchInterval;
-extern unsigned int nTargetSpacing;
+extern int64_t nLastCoinStakeSearchInterval;
 double GetPoSKernelPS();
 
 BitcoinGUI::BitcoinGUI(QWidget *parent):
@@ -71,10 +70,12 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     encryptWalletAction(0),
     changePassphraseAction(0),
     unlockWalletAction(0),
+    lockWalletAction(0),
     aboutQtAction(0),
     trayIcon(0),
     notificator(0),
-    rpcConsole(0)
+    rpcConsole(0),
+    nWeight(0)
 {
     resize(850, 550);
     setWindowTitle(tr("QCoin") + " - " + tr("Wallet"));
@@ -273,7 +274,9 @@ void BitcoinGUI::createActions()
     changePassphraseAction = new QAction(QIcon(":/icons/key"), tr("&Change Passphrase..."), this);
     changePassphraseAction->setToolTip(tr("Change the passphrase used for wallet encryption"));
     unlockWalletAction = new QAction(QIcon(":/icons/lock_open"), tr("&Unlock Wallet..."), this);
-    unlockWalletAction->setToolTip(tr("Unlock wallet for staking"));
+    unlockWalletAction->setToolTip(tr("Unlock wallet"));
+    lockWalletAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Lock Wallet"), this);
+    lockWalletAction->setToolTip(tr("Lock wallet"));
     signMessageAction = new QAction(QIcon(":/icons/edit"), tr("Sign &message..."), this);
     verifyMessageAction = new QAction(QIcon(":/icons/transaction_0"), tr("&Verify message..."), this);
 
@@ -291,6 +294,7 @@ void BitcoinGUI::createActions()
     connect(backupWalletAction, SIGNAL(triggered()), this, SLOT(backupWallet()));
     connect(changePassphraseAction, SIGNAL(triggered()), this, SLOT(changePassphrase()));
     connect(unlockWalletAction, SIGNAL(triggered()), this, SLOT(unlockWallet()));
+    connect(lockWalletAction, SIGNAL(triggered()), this, SLOT(lockWallet()));
     connect(signMessageAction, SIGNAL(triggered()), this, SLOT(gotoSignMessageTab()));
     connect(verifyMessageAction, SIGNAL(triggered()), this, SLOT(gotoVerifyMessageTab()));
 }
@@ -318,6 +322,7 @@ void BitcoinGUI::createMenuBar()
     settings->addAction(encryptWalletAction);
     settings->addAction(changePassphraseAction);
     settings->addAction(unlockWalletAction);
+    settings->addAction(lockWalletAction);
     settings->addSeparator();
     settings->addAction(optionsAction);
 
@@ -428,6 +433,7 @@ void BitcoinGUI::createTrayIcon()
 #else
     // Note: On Mac, the dock icon is used to provide the tray's functionality.
     MacDockIconHandler *dockIconHandler = MacDockIconHandler::instance();
+    dockIconHandler->setMainWindow((QMainWindow *)this);
     trayIconMenu = dockIconHandler->dockMenu();
 #endif
 
@@ -805,7 +811,8 @@ void BitcoinGUI::setEncryptionStatus(int status)
         labelEncryptionIcon->hide();
         encryptWalletAction->setChecked(false);
         changePassphraseAction->setEnabled(false);
-        unlockWalletAction->setEnabled(false);
+        unlockWalletAction->setVisible(false);
+        lockWalletAction->setVisible(false);
         encryptWalletAction->setEnabled(true);
         break;
     case WalletModel::Unlocked:
@@ -814,7 +821,8 @@ void BitcoinGUI::setEncryptionStatus(int status)
         labelEncryptionIcon->setToolTip(tr("Wallet is <b>encrypted</b> and currently <b>unlocked</b>"));
         encryptWalletAction->setChecked(true);
         changePassphraseAction->setEnabled(true);
-        unlockWalletAction->setEnabled(false);
+        unlockWalletAction->setVisible(false);
+        lockWalletAction->setVisible(true);
         encryptWalletAction->setEnabled(false); // TODO: decrypt currently not supported
         break;
     case WalletModel::Locked:
@@ -823,7 +831,8 @@ void BitcoinGUI::setEncryptionStatus(int status)
         labelEncryptionIcon->setToolTip(tr("Wallet is <b>encrypted</b> and currently <b>locked</b>"));
         encryptWalletAction->setChecked(true);
         changePassphraseAction->setEnabled(true);
-        unlockWalletAction->setEnabled(true);
+        unlockWalletAction->setVisible(true);
+        lockWalletAction->setVisible(false);
         encryptWalletAction->setEnabled(false); // TODO: decrypt currently not supported
         break;
     }
@@ -866,10 +875,20 @@ void BitcoinGUI::unlockWallet()
     // Unlock wallet when requested by wallet model
     if(walletModel->getEncryptionStatus() == WalletModel::Locked)
     {
-        AskPassphraseDialog dlg(AskPassphraseDialog::Unlock, this);
+        AskPassphraseDialog::Mode mode = sender() == unlockWalletAction ?
+              AskPassphraseDialog::UnlockStaking : AskPassphraseDialog::Unlock;
+        AskPassphraseDialog dlg(mode, this);
         dlg.setModel(walletModel);
         dlg.exec();
     }
+}
+
+void BitcoinGUI::lockWallet()
+{
+    if(!walletModel)
+        return;
+
+    walletModel->setWalletLocked(true);
 }
 
 void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)
@@ -899,17 +918,30 @@ void BitcoinGUI::toggleHidden()
     showNormalIfMinimized(true);
 }
 
-void BitcoinGUI::updateStakingIcon()
+void BitcoinGUI::updateWeight()
 {
     if (!pwalletMain)
         return;
 
-    uint64 nMinWeight = 0, nMaxWeight = 0, nWeight = 0;
+    TRY_LOCK(cs_main, lockMain);
+    if (!lockMain)
+        return;
+
+    TRY_LOCK(pwalletMain->cs_wallet, lockWallet);
+    if (!lockWallet)
+        return;
+
+    uint64_t nMinWeight = 0, nMaxWeight = 0;
     pwalletMain->GetStakeWeight(*pwalletMain, nMinWeight, nMaxWeight, nWeight);
+}
+
+void BitcoinGUI::updateStakingIcon()
+{
+    updateWeight();
 
     if (nLastCoinStakeSearchInterval && nWeight)
     {
-        uint64 nNetworkWeight = GetPoSKernelPS();
+        uint64_t nNetworkWeight = GetPoSKernelPS();
         unsigned nEstimateTime = nTargetSpacing * nNetworkWeight / nWeight;
 
         QString text;
@@ -942,7 +974,9 @@ void BitcoinGUI::updateStakingIcon()
             labelStakingIcon->setToolTip(tr("Not staking because wallet is offline"));
         else if (IsInitialBlockDownload())
             labelStakingIcon->setToolTip(tr("Not staking because wallet is syncing"));
-        else
+        else if (!nWeight)
             labelStakingIcon->setToolTip(tr("Not staking because you don't have mature coins"));
+        else
+            labelStakingIcon->setToolTip(tr("Not staking"));
     }
 }

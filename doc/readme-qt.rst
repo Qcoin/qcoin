@@ -1,4 +1,4 @@
-QCoin-qt: Qt4 GUI for QCoin
+QCoin-qt: Qt5 GUI for QCoin
 ===============================
 
 Build instructions
@@ -7,14 +7,15 @@ Build instructions
 Debian
 -------
 
-First, make sure that the required packages for Qt4 development of your
+First, make sure that the required packages for Qt5 development of your
 distribution are installed, for Debian and Ubuntu these are:
 
 ::
 
-    apt-get install qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev \
+    apt-get install qt5-default qt5-qmake qtbase5-dev-tools qttools5-dev-tools \
+        build-essential libboost-dev libboost-system-dev \
         libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev \
-        libssl-dev libdb4.8++-dev
+        libssl-dev libdb++-dev
 
 then execute the following:
 
@@ -35,16 +36,13 @@ Windows build instructions:
 
 - Download the `QT Windows SDK`_ and install it. You don't need the Symbian stuff, just the desktop Qt.
 
-- Download and extract the `dependencies archive`_  [#]_, or compile openssl, boost and dbcxx yourself.
+- Compile openssl, boost and dbcxx.
 
 - Copy the contents of the folder "deps" to "X:\\QtSDK\\mingw", replace X:\\ with the location where you installed the Qt SDK. Make sure that the contents of "deps\\include" end up in the current "include" directory.
 
 - Open the .pro file in QT creator and build as normal (ctrl-B)
 
 .. _`QT Windows SDK`: http://qt.nokia.com/downloads/sdk-windows-cpp
-.. _`dependencies archive`: https://download.visucore.com/qcoin/qtgui_deps_1.zip
-.. [#] PGP signature: https://download.visucore.com/qcoin/qtgui_deps_1.zip.sig (signed with RSA key ID `610945D0`_)
-.. _`610945D0`: http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x610945D0
 
 
 Mac OS X
@@ -123,7 +121,7 @@ Berkely DB version warning
 
 A warning for people using the *static binary* version of QCoin on a Linux/UNIX-ish system (tl;dr: **Berkely DB databases are not forward compatible**).
 
-The static binary version of QCoin is linked against libdb4.8 (see also `this Debian issue`_).
+The static binary version of QCoin is linked against libdb 5.0 (see also `this Debian issue`_).
 
 Now the nasty thing is that databases from 5.X are not compatible with 4.X.
 

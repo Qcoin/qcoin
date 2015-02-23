@@ -20,18 +20,6 @@ Value getsubsidy(const Array& params, bool fHelp)
             "getsubsidy [nTarget]\n"
             "Returns proof-of-work subsidy value for the specified value of target.");
 
-    unsigned int nBits = 0;
-
-    if (params.size() != 0)
-    {
-        CBigNum bnTarget(uint256(params[0].get_str()));
-        nBits = bnTarget.GetCompact();
-    }
-    else
-    {
-        nBits = GetNextTargetRequired(pindexBest, false);
-    }
-
     return (uint64_t)GetProofOfWorkReward(0);
 }
 
@@ -42,7 +30,7 @@ Value getmininginfo(const Array& params, bool fHelp)
             "getmininginfo\n"
             "Returns an object containing mining-related information.");
 
-    uint64 nMinWeight = 0, nMaxWeight = 0, nWeight = 0;
+    uint64_t nMinWeight = 0, nMaxWeight = 0, nWeight = 0;
     pwalletMain->GetStakeWeight(*pwalletMain, nMinWeight, nMaxWeight, nWeight);
 
     Object obj, diff, weight;
@@ -68,6 +56,41 @@ Value getmininginfo(const Array& params, bool fHelp)
 
     obj.push_back(Pair("stakeinterest",    (uint64_t)COIN_YEAR_REWARD));
     obj.push_back(Pair("testnet",       fTestNet));
+    return obj;
+}
+
+Value getstakinginfo(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() != 0)
+        throw runtime_error(
+            "getstakinginfo\n"
+            "Returns an object containing staking-related information.");
+
+    uint64_t nMinWeight = 0, nMaxWeight = 0, nWeight = 0;
+    pwalletMain->GetStakeWeight(*pwalletMain, nMinWeight, nMaxWeight, nWeight);
+
+    uint64_t nNetworkWeight = GetPoSKernelPS();
+    bool staking = nLastCoinStakeSearchInterval && nWeight;
+    int nExpectedTime = staking ? (nTargetSpacing * nNetworkWeight / nWeight) : -1;
+
+    Object obj;
+
+    obj.push_back(Pair("enabled", GetBoolArg("-staking", true)));
+    obj.push_back(Pair("staking", staking));
+    obj.push_back(Pair("errors", GetWarnings("statusbar")));
+
+    obj.push_back(Pair("currentblocksize", (uint64_t)nLastBlockSize));
+    obj.push_back(Pair("currentblocktx", (uint64_t)nLastBlockTx));
+    obj.push_back(Pair("pooledtx", (uint64_t)mempool.size()));
+
+    obj.push_back(Pair("difficulty", GetDifficulty(GetLastBlockIndex(pindexBest, true))));
+    obj.push_back(Pair("search-interval", (int)nLastCoinStakeSearchInterval));
+
+    obj.push_back(Pair("weight", (uint64_t)nWeight));
+    obj.push_back(Pair("netstakeweight", (uint64_t)nNetworkWeight));
+
+    obj.push_back(Pair("expectedtime", nExpectedTime));
+
     return obj;
 }
 
@@ -98,7 +121,7 @@ Value getworkex(const Array& params, bool fHelp)
         // Update block
         static unsigned int nTransactionsUpdatedLast;
         static CBlockIndex* pindexPrev;
-        static int64 nStart;
+        static int64_t nStart;
         static CBlock* pblock;
         if (pindexPrev != pindexBest ||
             (nTransactionsUpdated != nTransactionsUpdatedLast && GetTime() - nStart > 60))
@@ -123,7 +146,7 @@ Value getworkex(const Array& params, bool fHelp)
         }
 
         // Update nTime
-        pblock->nTime = max(pindexPrev->GetMedianTimePast()+1, GetAdjustedTime());
+        pblock->nTime = max(pindexPrev->GetPastTimeLimit()+1, GetAdjustedTime());
         pblock->nNonce = 0;
 
         // Update nExtraNonce
@@ -232,7 +255,7 @@ Value getwork(const Array& params, bool fHelp)
         // Update block
         static unsigned int nTransactionsUpdatedLast;
         static CBlockIndex* pindexPrev;
-        static int64 nStart;
+        static int64_t nStart;
         static CBlock* pblock;
         if (pindexPrev != pindexBest ||
             (nTransactionsUpdated != nTransactionsUpdatedLast && GetTime() - nStart > 60))
@@ -371,7 +394,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
     // Update block
     static unsigned int nTransactionsUpdatedLast;
     static CBlockIndex* pindexPrev;
-    static int64 nStart;
+    static int64_t nStart;
     static CBlock* pblock;
     if (pindexPrev != pindexBest ||
         (nTransactionsUpdated != nTransactionsUpdatedLast && GetTime() - nStart > 5))
@@ -465,7 +488,7 @@ Value getblocktemplate(const Array& params, bool fHelp)
     result.push_back(Pair("coinbaseaux", aux));
     result.push_back(Pair("coinbasevalue", (int64_t)pblock->vtx[0].vout[0].nValue));
     result.push_back(Pair("target", hashTarget.GetHex()));
-    result.push_back(Pair("mintime", (int64_t)pindexPrev->GetMedianTimePast()+1));
+    result.push_back(Pair("mintime", (int64_t)pindexPrev->GetPastTimeLimit()+1));
     result.push_back(Pair("mutable", aMutable));
     result.push_back(Pair("noncerange", "00000000ffffffff"));
     result.push_back(Pair("sigoplimit", (int64_t)MAX_BLOCK_SIGOPS));

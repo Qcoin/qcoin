@@ -55,7 +55,7 @@ static void ThreadSafeMessageBox(const std::string& message, const std::string& 
     }
 }
 
-static bool ThreadSafeAskFee(int64 nFeeRequired, const std::string& strCaption)
+static bool ThreadSafeAskFee(int64_t nFeeRequired, const std::string& strCaption)
 {
     if(!guiref)
         return false;
@@ -222,8 +222,6 @@ int main(int argc, char *argv[])
             {
                 // Put this in a block, so that the Model objects are cleaned up before
                 // calling Shutdown().
-
-                optionsModel.Upgrade(); // Must be done after AppInit2
 
                 if (splashref)
                     splash.finish(&window);
