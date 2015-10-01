@@ -3131,7 +3131,7 @@ de exemplu: alertnotify=echo %%s | mail -s &quot;QCoin Alert&quot; admin@foo.com
     <message>
         <location line="+1"/>
         <source>Cannot obtain a lock on data directory %s.  QCoin is probably already running.</source>
-        <translation>Nu se poate obtine un lock pe directorul de date &amp;s. Blackoin probabil ruleaza deja.</translation>
+        <translation>Nu se poate obtine un lock pe directorul de date &amp;s. Qcoin probabil ruleaza deja.</translation>
     </message>
     <message>
         <location line="-98"/>

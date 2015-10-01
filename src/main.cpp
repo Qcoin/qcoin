@@ -3243,7 +3243,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
                 checkpoint.RelayTo(pnode);
         }
     }
-    
+
     else if (strCommand == "getheaders")
     {
         CBlockLocator locator;
