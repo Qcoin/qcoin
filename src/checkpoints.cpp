@@ -29,6 +29,9 @@ namespace Checkpoints
         boost::assign::map_list_of
         ( 0,     hashGenesisBlock )
         ( 100,   uint256("0x00000b55e797814bdc025ccefa8fe18a3b04a7c32fc496c773d3e5d1081df08e") )
+        ( 1700,   uint256("0xd663a0e698237dd7e6d642b97576826383bd816158af267ffa42f7c447791bc0") )
+        ( 8990,   uint256("0xf11d412d482cc171e20020c87221743b17145cde8a2d240ede22149b7b11943e") )
+
     ;
 
     // TestNet has no checkpoints
